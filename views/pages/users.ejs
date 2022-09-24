@@ -6,15 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .title {
+            height: 150px;
+            background-color: rgb(14, 14, 116);
+            padding: 10px;
+        }
+        
+        .title h1 {
+            margin-top: 50px;
+            color: white;
+        }
+        
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+        
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+        }
+        
+        #btn-delete {
+            padding: 5px;
+            width: 50px;
+            background-color: white;
+            border: 1px solid rgb(211, 209, 209);
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <table>
-        <thead>
+
+    <div class="title">
+        <h1>Membres</h1>
+    </div>
+    <table id="customers">
+        <thead class="thead">
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Email</th>
+                <th>Telephone</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -26,13 +83,19 @@
                     <td>
                         <%= user.prenom %>
                     </td>
+
                     <td>
-                        <%= user.email %>
+                        <%= user.phone %>
+                    </td>
+                    <td>
+                        <button id="btn-delete">X</button>
+
                     </td>
                 </tr>
                 <% } %>
         </tbody>
     </table>
+
 </body>
 
 </html>

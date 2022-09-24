@@ -1,25 +1,22 @@
-var express = require('express');
+var express = require("express");
 var route = express.Router();
 
-var users = []
-route.get('/', (req, res) => {
-    res.render(__dirname + "/../views/pages/index.ejs")
-})
-route.get('/welcome', (req, res) => {
-    res.render(__dirname + "/../views/pages/welcome.ejs");
-})
+var users = [];
 
-route.get('/form', (req, res) => {
+route.get("/", (req, res) => {
     res.render(__dirname + "/../views/pages/form.ejs");
-})
+});
 
-route.get('/users', (req, res) => {
+route.get("/welcome", (req, res) => {
+    res.render(__dirname + "/../views/pages/welcome.ejs");
+});
+
+route.get("/users", (req, res) => {
     res.render(__dirname + "/../views/pages/users.ejs", { users: users });
-})
-
+});
 
 //Traitement
-route.post('/form', (req, res) => {
+route.post("/form", (req, res) => {
     console.log(req.body);
 
     let user = req.body;
@@ -27,8 +24,7 @@ route.post('/form', (req, res) => {
     if (user) {
         users.push(user);
         res.redirect("/users");
-    } else
-        res.redirect("/");
-})
+    } else res.redirect("/");
+});
 
 module.exports = route;

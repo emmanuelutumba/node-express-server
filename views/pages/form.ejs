@@ -5,25 +5,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulaire d'enregistrement</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .title {
+            height: 250px;
+            background-color: rgb(14, 14, 116);
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .title h1 {
+            color: white;
+            margin-top: 190px;
+        }
+        
+        .bloc1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .bloc2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .input {
+            padding: 10px;
+            margin-top: 10px;
+            width: 400px;
+        }
+        
+        .label {
+            font-weight: 500px;
+        }
+        
+        .btn {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 70px;
+        }
+        
+        .btn button {
+            padding: 10px;
+            width: 400px;
+            background-color: rgb(14, 14, 116);
+            color: white;
+            font-size: large;
+        }
+    </style>
 </head>
 
 <body>
     <form action="form" method="post">
-        <p>
-            <label for="">Nom</label> <br>
-            <input type="text" name="nom">
-        </p>
-        <p>
-            <label for="">Prénom</label> <br>
-            <input type="text" name="prenom">
-        </p>
-        <p>
-            <label for="">Email</label> <br>
-            <input type="email" name="email">
-        </p>
-        <button type="submit">Enregistrer</button>
+        <div class="container">
+            <div class="title">
+                <h1>FORMULAIRE</h1>
+            </div>
+            <div class="form">
+                <div class="bloc1">
+                    <div class="inputName">
+                        <label class="label" for="">Nom</label><br>
+                        <input class="input" type="text" name="nom">
+                    </div>
+                    <div class="inputPrenom">
+                        <label class="label" for="">Prénom</label><br>
+                        <input class="input" type="text" name="prenom">
+                    </div>
+                </div>
+
+                <div class="bloc2">
+                    <div class="inputPhone">
+                        <label class="label" for="">Telephone</label><br>
+                        <input class="input" type="phone" name="phone"></div>
+                    <div class="inputEmail">
+                        <label class="label" for="">Email</label><br>
+                        <input class="input" type="email" name="email">
+                    </div>
+                </div>
+                <div class="btn"> <button type="submit">Enregistrer</button></div>
+            </div>
+        </div>
+
     </form>
+
 </body>
 
 </html>
